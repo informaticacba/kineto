@@ -303,7 +303,8 @@ def create_operator_node(event: OperatorEvent):
 
 
 def is_operator_node(node: BaseNode):
-    return bool(type(node) is OperatorNode and node.type == EventTypes.OPERATOR and node.name not in ExcludeOpName)
+    return bool(type(node) is OperatorNode and node.type == EventTypes.OPERATOR and node.name not in ExcludeOpName
+                and not node.name.startswith("Optimizer."))  # exclude Optimizer.zero_grad
 
 
 def get_chilren_self_device_time(node):
