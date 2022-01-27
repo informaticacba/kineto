@@ -17,7 +17,7 @@ import * as api from '../api'
 import { FullCircularProgress } from './FullCircularProgress'
 import { useResizeEventDependency } from '../utils/resize'
 
-const { Option } = Select;
+const { Option } = Select
 
 const topGraphHeight = 230
 
@@ -61,7 +61,9 @@ export interface DiffStepChartIProps {
   rawData: any[]
 }
 
-const DiffColumnChart: React.FC<DiffColumnChartIProps> = (props: DiffColumnChartIProps) => {
+const DiffColumnChart: React.FC<DiffColumnChartIProps> = (
+  props: DiffColumnChartIProps
+) => {
   const { rawData, selectCallback } = props
   const graphRef = React.useRef<HTMLDivElement>(null)
   const [resizeEventDependency] = useResizeEventDependency()
@@ -144,7 +146,9 @@ const DiffColumnChart: React.FC<DiffColumnChartIProps> = (props: DiffColumnChart
   )
 }
 
-const DiffStepChart: React.FC<DiffStepChartIProps> = (props: DiffStepChartIProps) => {
+const DiffStepChart: React.FC<DiffStepChartIProps> = (
+  props: DiffStepChartIProps
+) => {
   const { rawData } = props
   const graphRef = React.useRef<HTMLDivElement>(null)
   const [resizeEventDependency] = useResizeEventDependency()
@@ -245,13 +249,15 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
       title: 'Exp Host Duration (us)',
       dataIndex: 'expHostDuration',
       key: 'expHostDuration',
-      sorter: (a: TableRow, b: TableRow) => a.expHostDuration - b.expHostDuration
+      sorter: (a: TableRow, b: TableRow) =>
+        a.expHostDuration - b.expHostDuration
     },
     {
       title: 'Delta Host Duration (us)',
       dataIndex: 'deltaHostDuration',
       key: 'deltaHostDuration',
-      sorter: (a: TableRow, b: TableRow) => a.deltaHostDuration! - b.deltaHostDuration!
+      sorter: (a: TableRow, b: TableRow) =>
+        a.deltaHostDuration! - b.deltaHostDuration!
     },
     {
       title: 'Delta Host Duration%',
@@ -259,8 +265,8 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
       key: 'deltaHostDurationPercent',
       sorter: (a: TableRow, b: TableRow) =>
         a.deltaHostDurationPercentNumber! - b.deltaHostDurationPercentNumber!
-    },
-  ];
+    }
+  ]
 
   const selfHostDurationColumns = [
     {
@@ -274,22 +280,25 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
       title: 'Exp Self Host Duration (us)',
       dataIndex: 'expSelfHostDuration',
       key: 'expSelfHostDuration',
-      sorter: (a: TableRow, b: TableRow) => a.expSelfHostDuration - b.expSelfHostDuration
+      sorter: (a: TableRow, b: TableRow) =>
+        a.expSelfHostDuration - b.expSelfHostDuration
     },
     {
       title: 'Delta Self Host Duration (us)',
       dataIndex: 'deltaSelfHostDuration',
       key: 'deltaSelfHostDuration',
-      sorter: (a: TableRow, b: TableRow) => a.deltaSelfHostDuration! - b.deltaSelfHostDuration!
+      sorter: (a: TableRow, b: TableRow) =>
+        a.deltaSelfHostDuration! - b.deltaSelfHostDuration!
     },
     {
       title: 'Delta Self Host Duration%',
       dataIndex: 'deltaSelfHostDurationPercent',
       key: 'deltaSelfHostDurationPercent',
       sorter: (a: TableRow, b: TableRow) =>
-        a.deltaSelfHostDurationPercentNumber! - b.deltaSelfHostDurationPercentNumber!
-    },
-  ];
+        a.deltaSelfHostDurationPercentNumber! -
+        b.deltaSelfHostDurationPercentNumber!
+    }
+  ]
 
   const deviceDurationColumns = [
     {
@@ -303,22 +312,25 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
       title: 'Exp Device Duration (us)',
       dataIndex: 'expDeviceDuration',
       key: 'expDeviceDuration',
-      sorter: (a: TableRow, b: TableRow) => a.expDeviceDuration - b.expDeviceDuration
+      sorter: (a: TableRow, b: TableRow) =>
+        a.expDeviceDuration - b.expDeviceDuration
     },
     {
       title: 'Delta Device Duration (us)',
       dataIndex: 'deltaDeviceDuration',
       key: 'deltaDeviceDuration',
-      sorter: (a: TableRow, b: TableRow) => a.deltaDeviceDuration! - b.deltaDeviceDuration!
+      sorter: (a: TableRow, b: TableRow) =>
+        a.deltaDeviceDuration! - b.deltaDeviceDuration!
     },
     {
       title: 'Delta Device Duration%',
       dataIndex: 'deltaDeviceDurationPercent',
       key: 'deltaDeviceDurationPercent',
       sorter: (a: TableRow, b: TableRow) =>
-        a.deltaDeviceDurationPercentNumber! - b.deltaDeviceDurationPercentNumber!
-    },  
-  ];
+        a.deltaDeviceDurationPercentNumber! -
+        b.deltaDeviceDurationPercentNumber!
+    }
+  ]
 
   const selfDeviceDurationColumns = [
     {
@@ -332,38 +344,41 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
       title: 'Exp Self Device Duration (us)',
       dataIndex: 'expSelfDeviceDuration',
       key: 'expSelfDeviceDuration',
-      sorter: (a: TableRow, b: TableRow) => a.expSelfDeviceDuration - b.expSelfDeviceDuration
+      sorter: (a: TableRow, b: TableRow) =>
+        a.expSelfDeviceDuration - b.expSelfDeviceDuration
     },
     {
       title: 'Delta Self Device Duration (us)',
       dataIndex: 'deltaSelfDeviceDuration',
       key: 'deltaSelfDeviceDuration',
-      sorter: (a: TableRow, b: TableRow) => a.deltaSelfDeviceDuration! - b.deltaSelfDeviceDuration!
+      sorter: (a: TableRow, b: TableRow) =>
+        a.deltaSelfDeviceDuration! - b.deltaSelfDeviceDuration!
     },
     {
       title: 'Delta Self Device Duration%',
       dataIndex: 'deltaSelfDeviceDurationPercent',
       key: 'deltaSelfDeviceDurationPercent',
       sorter: (a: TableRow, b: TableRow) =>
-        a.deltaSelfDeviceDurationPercentNumber! - b.deltaSelfDeviceDurationPercentNumber!
+        a.deltaSelfDeviceDurationPercentNumber! -
+        b.deltaSelfDeviceDurationPercentNumber!
     }
-  ];
+  ]
 
-  type IColumnMapType = {[key: string]: any};
+  type IColumnMapType = { [key: string]: any }
 
   const tableSourceColumnMap: IColumnMapType = {
-    'selfHostDuration': selfHostDurationColumns,
-    'hostDuration': hostDurationColumns,
-    'deviceDuration': deviceDurationColumns,
-    'selfDeviceDuration': selfDeviceDurationColumns
-  };
+    selfHostDuration: selfHostDurationColumns,
+    hostDuration: hostDurationColumns,
+    deviceDuration: deviceDurationColumns,
+    selfDeviceDuration: selfDeviceDurationColumns
+  }
 
   const baseTableColumns = [
     {
       title: 'Operator',
       dataIndex: 'operator',
       key: 'operator',
-      sorter: (a: TableRow, b: TableRow) =>  a.operator.localeCompare(b.operator)
+      sorter: (a: TableRow, b: TableRow) => a.operator.localeCompare(b.operator)
     },
     {
       title: 'Baseline Calls',
@@ -407,7 +422,9 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
   const [columnChartData, setColumnChartData] = React.useState<any[]>([])
   const [stepChartData, setStepChartData] = React.useState<any[]>([])
 
-  const [selectedTableColumns, setSelectedTableColumns] = React.useState<any[]>([...baseTableColumns, ...hostDurationColumns]);
+  const [selectedTableColumns, setSelectedTableColumns] = React.useState<any[]>(
+    [...baseTableColumns, ...hostDurationColumns]
+  )
 
   const [dataStackLevel, setDataStackLevel] = React.useState(0)
   const [loading, setLoading] = React.useState(false)
@@ -485,17 +502,17 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
 
   const toPercentString = (percentNumber: number) => {
     if (isNaN(percentNumber)) {
-      return "N/A";
+      return 'N/A'
     }
 
     return `${percentNumber.toFixed(2)}%`
   }
 
-  const handleColumnSelectionChange = (value: [key:string]) => {
-    let columns = value.map(x => tableSourceColumnMap[x]).flat();
-    let r = [...baseTableColumns, ...columns];
-    console.log(r);
-    setSelectedTableColumns(r);
+  const handleColumnSelectionChange = (value: [key: string]) => {
+    let columns = value.map((x) => tableSourceColumnMap[x]).flat()
+    let r = [...baseTableColumns, ...columns]
+    console.log(r)
+    setSelectedTableColumns(r)
   }
 
   const generateDataSourceFromUnderlyingData = (
@@ -511,25 +528,23 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
         ((right.calls - left.calls) / left.calls) * 100
 
       let deltaHostDurationPercentNumber =
-      ((right.host_duration - left.host_duration) /
-        left.host_duration) *
-      100
+        ((right.host_duration - left.host_duration) / left.host_duration) * 100
 
       let deltaSelfHostDurationPercentNumber =
         ((right.self_host_duration - left.self_host_duration) /
           left.self_host_duration) *
         100
-    
+
       let deltaDeviceDurationPercentNumber =
-      ((right.device_duration - left.device_duration) /
-        left.device_duration) *
-      100
-    
+        ((right.device_duration - left.device_duration) /
+          left.device_duration) *
+        100
+
       let deltaSelfDeviceDurationPercentNumber =
         ((right.self_device_duration - left.self_device_duration) /
           left.self_device_duration) *
         100
-        
+
       tableDataSource.push({
         key: i,
         operator: left.name,
@@ -543,25 +558,35 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
         expHostDuration: right.host_duration,
         deltaHostDuration: right.host_duration - left.host_duration,
         deltaHostDurationPercentNumber: deltaHostDurationPercentNumber,
-        deltaHostDurationPercent: toPercentString(deltaHostDurationPercentNumber),
+        deltaHostDurationPercent: toPercentString(
+          deltaHostDurationPercentNumber
+        ),
 
         baselineSelfHostDuration: left.self_host_duration,
         expSelfHostDuration: right.self_host_duration,
-        deltaSelfHostDuration: right.self_host_duration - left.self_host_duration,
+        deltaSelfHostDuration:
+          right.self_host_duration - left.self_host_duration,
         deltaSelfHostDurationPercentNumber: deltaSelfHostDurationPercentNumber,
-        deltaSelfHostDurationPercent: toPercentString(deltaSelfHostDurationPercentNumber),
+        deltaSelfHostDurationPercent: toPercentString(
+          deltaSelfHostDurationPercentNumber
+        ),
 
         baselineDeviceDuration: left.device_duration,
         expDeviceDuration: right.device_duration,
         deltaDeviceDuration: right.device_duration - left.device_duration,
         deltaDeviceDurationPercentNumber: deltaDeviceDurationPercentNumber,
-        deltaDeviceDurationPercent: toPercentString(deltaDeviceDurationPercentNumber),
+        deltaDeviceDurationPercent: toPercentString(
+          deltaDeviceDurationPercentNumber
+        ),
 
         baselineSelfDeviceDuration: left.self_device_duration,
         expSelfDeviceDuration: right.self_device_duration,
-        deltaSelfDeviceDuration: right.self_device_duration - left.self_device_duration,
+        deltaSelfDeviceDuration:
+          right.self_device_duration - left.self_device_duration,
         deltaSelfDeviceDurationPercentNumber: deltaSelfDeviceDurationPercentNumber,
-        deltaSelfDeviceDurationPercent: toPercentString(deltaSelfDeviceDurationPercentNumber)
+        deltaSelfDeviceDurationPercent: toPercentString(
+          deltaSelfDeviceDurationPercentNumber
+        )
       })
     }
 
@@ -603,7 +628,7 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
         })
         .finally(() => setLoading(false))
 
-      setSelectedTableColumns([...baseTableColumns, ...hostDurationColumns]);
+      setSelectedTableColumns([...baseTableColumns, ...hostDurationColumns])
     }
   }, [run, worker, span, expRun, expWorker, expSpan])
 
@@ -779,37 +804,35 @@ export const DiffOverview: React.FC<IProps> = (props: IProps) => {
             <Card variant="outlined">
               <CardHeader title="Operator View" />
               <CardContent>
-              <Select
-                mode="multiple"
-                style={{ width: '100%' }}
-                placeholder="Select the data you need"
-                defaultValue={['hostDuration']}
-                onChange={handleColumnSelectionChange}
-                optionLabelProp="label"
-              >
-                <Option value="hostDuration" label="Host Duration">
-                  <div>
-                  Host Duration
-                  </div>
-                </Option>
-                <Option value="selfHostDuration" label="Self Host Duration">
-                  <div>
-                  Self Host Duration
-                  </div>
-                </Option>
-                <Option value="deviceDuration" label="Device Duration">
-                  <div>
-                  Device Duration
-                  </div>
-                </Option>
-                <Option value="selfDeviceDuration" label="Self Device Duration">
-                  <div>
-                  Self Device Duration
-                  </div>
-                </Option>
-              </Select>
-              &nbsp;
-              <Table dataSource={tableDataSource} columns={selectedTableColumns} />
+                <Select
+                  mode="multiple"
+                  style={{ width: '100%' }}
+                  placeholder="Select the data you need"
+                  defaultValue={['hostDuration']}
+                  onChange={handleColumnSelectionChange}
+                  optionLabelProp="label"
+                >
+                  <Option value="hostDuration" label="Host Duration">
+                    <div>Host Duration</div>
+                  </Option>
+                  <Option value="selfHostDuration" label="Self Host Duration">
+                    <div>Self Host Duration</div>
+                  </Option>
+                  <Option value="deviceDuration" label="Device Duration">
+                    <div>Device Duration</div>
+                  </Option>
+                  <Option
+                    value="selfDeviceDuration"
+                    label="Self Device Duration"
+                  >
+                    <div>Self Device Duration</div>
+                  </Option>
+                </Select>
+                &nbsp;
+                <Table
+                  dataSource={tableDataSource}
+                  columns={selectedTableColumns}
+                />
               </CardContent>
             </Card>
           </Grid>
