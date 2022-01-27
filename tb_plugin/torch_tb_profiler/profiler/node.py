@@ -296,7 +296,7 @@ def create_operator_node(event: OperatorEvent):
     if (event.name.startswith('enumerate(DataLoader)#') and event.name.endswith('.__next__')
             or event.name.startswith('enumerate(DataPipe)#')):
         return DataLoaderNode.create(event)
-    elif event.name.startswith('Optimizer.'):
+    elif event.name.startswith('Optimizer.step'):
         return OptimizerNode.create(event)
     else:
         return OperatorNode.create(event)
