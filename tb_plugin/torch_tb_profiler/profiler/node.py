@@ -192,6 +192,7 @@ class BackwardNode(OperatorNode):
             if not self.tc_eligible and child.tc_eligible:
                 self.tc_eligible = True
 
+
 class PLProfileNode(OperatorNode):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -313,4 +314,3 @@ def get_chilren_self_device_time(node):
         if is_operator_node(child):
             self_device_duration += child.device_duration
     return self_device_duration
-

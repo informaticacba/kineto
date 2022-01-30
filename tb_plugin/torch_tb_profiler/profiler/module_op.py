@@ -4,7 +4,8 @@
 from collections import namedtuple
 from typing import Dict, Generator, Iterable, List, Optional, Set, Tuple, Union
 
-from .node import DataLoaderNode, ModuleNode, OperatorNode, PLModuleNode, ProfilerStepNode, is_operator_node
+from .node import (DataLoaderNode, ModuleNode, OperatorNode, PLModuleNode,
+                   ProfilerStepNode, is_operator_node)
 from .trace import BaseEvent, EventTypes, PLModuleEvent, PythonFunctionEvent
 
 
@@ -199,7 +200,9 @@ def _get_node_list(tid2tree: Dict[int, OperatorNode], node_class) -> Generator[O
             yield from traverse_node(child)
 
 
-def _process_module_statistics(modules_nodes: Iterable[Union[ModuleNode, PLModuleNode]], hierarchy: Iterable[Module]) -> List[Stats]:
+def _process_module_statistics(
+        modules_nodes: Iterable[Union[ModuleNode, PLModuleNode]],
+        hierarchy: Iterable[Module]) -> List[Stats]:
     """Get the module statistics from the ModuleNode(s) and the hierarchy
     """
     module_aggs = _aggregate_modules(modules_nodes)
